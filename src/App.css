@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Light/Dark Theme */
+.app.light {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.app.dark {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Container - Glassmorphism */
+.container {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 40px 30px;
+  width: 450px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.app.dark .container {
+  background: rgba(30,30,50,0.3);
+}
+
+/* Header */
+.app-header {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+/* Counter */
+.counter-value {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  color: #ff6a00;
+}
+
+.app.dark .counter-value {
+  color: #90caf9;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Gradient Buttons */
+.increase { background: linear-gradient(45deg, #4caf50, #81c784); color: #fff; }
+.decrease { background: linear-gradient(45deg, #f44336, #e57373); color: #fff; }
+.reset { background: linear-gradient(45deg, #ff9800, #ffb74d); color: #fff; }
+.clear { background: linear-gradient(45deg, #9c27b0, #ba68c8); color: #fff; }
+.step { background: linear-gradient(45deg, #2196f3, #64b5f6); color: #fff; }
+.theme-toggle { background: linear-gradient(45deg, #607d8b, #90a4ae); color: #fff; }
+
+
+/* History */
+.history {
+  background: rgba(0,0,0,0.05);
+  border-radius: 18px;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-top: 25px;
+  padding: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.app.dark .history {
+  background: rgba(255,255,255,0.1);
+  color: #ddd;
+}
+
+.history h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ✅ History List Styling */
+.history ul {
+  list-style-type: none;   /* default . hat gaye */
+  padding-left: 0;
+}
+
+.history li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.app.dark .history li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Custom Bullet */
+.history li::before {
+  content: "➤";          /* yahan tum ✨ ✅ 🔹 🔥 koi bhi dal sakte ho */
+  color: #ff6a00;        /* bright orange bullet */
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.app.dark .history li::before {
+  color: #90caf9;        /* dark mode me light blue bullet */
+}
+
+
+/* Footer - Created by Harsh Maitray */
+.footer {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #444;
+  font-weight: 500;
+}
+
+.app.dark .footer {
+  color: #ccc;
+}
+
+.creator-name {
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #444;
+}
+
+.app.dark .footer {
+  color: #ccc;
+}
+
+.creator-name {
+  font-weight: 900;
+  font-size: 1.3rem;
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #8e2de2, #4facfe, #00f2fe);
+  background-size: 1000% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s linear infinite;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.creator-name:hover {
+  transform: scale(1.2) rotate(-2deg);
+  text-shadow: 2px 2px 15px rgba(0,0,0,0.5), 0 0 10px #ff6a00, 0 0 20px #ee0979;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
